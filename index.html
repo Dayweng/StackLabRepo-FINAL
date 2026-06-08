@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>StackLab Academy — Master Tech Skills Layer by Layer</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Shared stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand:  '#00A3FF',   /* palette accent blue */
+            royal:  '#082B43',   /* palette deep navy (hover / footer) */
+            teal:   '#0B3C5D',   /* palette teal-navy */
+            canvas: '#F5F7FA',   /* palette near-white */
+            dark:   '#071B2F',   /* hero bg */
+            slate:  '#082B43',   /* footer */
+          },
+          fontFamily: {
+            sans: ["'Space Grotesk'", 'sans-serif'],
+            nasa: ['"Nasalization"', 'sans-serif'],
+            rig:  ['"Rig Shaded"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="antialiased overflow-x-hidden font-sans" style="background:#071B2F;color:#1E293B;">
+
+<!-- #region NAVBAR -->
+<header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between gap-6">
+
+    <!-- Brand -->
+    <a href="index.html" class="flex items-center gap-3 brand-hover flex-shrink-0">
+      <img src="logo.png" alt="StackLab Academy" class="w-9 h-9 object-contain" />
+      <div class="flex flex-col leading-none">
+        <span class="font-nasa text-[13px] tracking-wide text-white brand-name transition-colors duration-200">STACKLAB</span>
+        <span class="font-nasa text-[8px] tracking-widest text-white/50">ACADEMY™</span>
+      </div>
+    </a>
+
+    <!-- Right CTAs -->
+    <div class="flex items-center gap-3">
+      <a href="login.html" class="hidden sm:inline-block text-[13.5px] text-white/75 hover:text-white transition-colors duration-200 font-medium px-3 py-2">
+        Sign In
+      </a>
+      <!-- nav-cta-btn class tells script.js to keep this text WHITE even when navbar scrolls -->
+      <a href="login.html"
+         class="nav-cta-btn inline-flex items-center gap-2 bg-brand hover:bg-royal text-white text-[13.5px] font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
+         style="box-shadow: 0 4px 14px rgba(0,163,255,0.4);">
+        Go to Dashboard
+        <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</header>
+
+<!-- #endregion -->
+
+<!-- #region HERO -->
+<section class="hero-bg grid-texture relative min-h-screen flex items-center overflow-hidden pt-[68px]">
+
+  <!-- Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full py-20 lg:py-28">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+
+      <!-- Left: Text -->
+      <div class="flex flex-col gap-6">
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
+          <span class="text-[12.5px] text-blue-300 font-semibold tracking-widest uppercase">Online Tech Academy</span>
+        </div>
+
+        <h1 class="font-rig font-bold text-5xl lg:text-6xl xl:text-[64px] text-white leading-[1.08] tracking-tight">
+          Master Tech Skills<br/>
+          <span class="text-transparent bg-clip-text" style="background-image: linear-gradient(90deg, #60A5FA, #818CF8);">
+            Layer by Layer
+          </span>
+        </h1>
+
+        <p class="text-[16px] text-white/65 leading-relaxed max-w-lg">
+          Choose a customized academic path in Web Development, UI/UX Design, or Cybersecurity. Build real projects, get mentor feedback, and graduate job-ready.
+        </p>
+
+        <!-- Enroll form card -->
+        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md">
+          <div class="flex items-center gap-3 flex-1 bg-white/10 rounded-xl px-4 py-3 border border-white/10">
+            <svg class="w-4 h-4 text-white/50 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            <input type="email" placeholder="Enter your email address"
+                   class="enroll-input bg-transparent text-white placeholder-white/40 text-[13.5px] flex-1 border-none outline-none" />
+          </div>
+          <button class="bg-brand hover:bg-royal text-white font-semibold text-[13.5px] px-6 py-3 rounded-xl transition-all duration-200 whitespace-nowrap hover:-translate-y-0.5"
+                  style="box-shadow:0 4px 16px rgba(0,163,255,0.5);">
+            Enroll For Free
+          </button>
+        </div>
+
+        <p class="text-[12px] text-white/35">No credit card required · Cancel anytime</p>
+      </div>
+
+      <!-- Right: App window placeholder -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative w-full max-w-[560px]">
+
+          <!-- Subtle glow behind window -->
+          <div class="absolute inset-0 rounded-2xl blur-2xl opacity-30"
+               style="background: linear-gradient(135deg, #1A56DB, #7C3AED); transform: scale(0.95) translateY(10px);"></div>
+
+          <!-- Window chrome -->
+          <div class="relative rounded-2xl overflow-hidden border border-white/15"
+               style="background: rgba(15,23,42,0.75); backdrop-filter: blur(20px);">
+
+            <!-- Title bar -->
+            <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10"
+                 style="background: rgba(255,255,255,0.04);">
+              <div class="chrome-dot bg-red-400/80"></div>
+              <div class="chrome-dot bg-yellow-400/80"></div>
+              <div class="chrome-dot bg-green-400/80"></div>
+              <div class="ml-3 flex-1 bg-white/8 rounded-md px-3 py-1 border border-white/10"
+                   style="background:rgba(255,255,255,0.06);">
+                <span class="text-[11px] text-white/35 font-mono">stacklab.academy</span>
+              </div>
+            </div>
+
+            <!-- Video placeholder -->
+            <div class="relative aspect-video overflow-hidden"
+                 style="background: linear-gradient(135deg, #0B1120 0%, #111827 100%);">
+              <div class="absolute inset-0 flex items-center justify-center" id="videoSlot">
+                <video autoplay muted loop playsinline src="logos\loop video stacklab.webm" class="w-full h-full object-cover"></video>
+              </div>
+
+              <!-- Bottom status bar -->
+              <div class="absolute bottom-0 left-0 right-0 h-10 flex items-center px-4 gap-3"
+                   style="background: rgba(0, 0, 0, 0.616); backdrop-filter: blur(8px);">
+                <div class="flex gap-1.5 items-center">
+                  <div class="w-1.5 h-1.5 rounded-full bg-blue-400"></div>
+                  <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                  <div class="w-1.5 h-1.5 rounded-full bg-white/20"></div>
+                </div>
+                <span class="text-[11px] text-white/35 font-mono">stacklab.academy</span>
+              </div>
+            </div>
+          </div><!-- /window -->
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom wave -->
+  <div class="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
+       style="background: linear-gradient(to bottom, transparent 0%, #F8FAFC 100%);"></div>
+</section>
+
+<!-- #endregion -->
+
+<!-- #region SOCIAL PROOF -->
+<section class="border-y border-slate-100 py-5" style="background:#F5F7FA;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col items-center gap-6">
+      <p class="text-[16px] font-semibold text-slate-400 tracking-wide text-center">
+        Our graduates build systems at modern tech leaders
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-8">
+        <img src="logos/google.webp"    alt="Google"    style="width:100px;height:100px;object-fit:contain;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'" />
+        <img src="logos/meta.webp"      alt="Meta"      style="width:100px;height:100px;object-fit:contain;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'" />
+        <img src="logos/microsoft.webp" alt="Microsoft" style="width:100px;height:100px;object-fit:contain;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'" />
+        <img src="logos/stripe.webp"    alt="Stripe"    style="width:100px;height:100px;object-fit:contain;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'" />
+        <img src="logos/vercel.webp"    alt="Vercel"    style="width:100px;height:100px;object-fit:contain;opacity:0.5;transition:opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='0.5'" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- #endregion -->
+
+<!-- #region FEATURES -->
+<section id="features" class="py-24 lg:py-32" style="background:#ffffff;">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-16 reveal">
+      <span class="inline-block text-[12px] font-bold tracking-widest text-brand uppercase mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
+        Why StackLab
+      </span>
+      <h2 class="font-rig font-bold text-4xl lg:text-5xl text-slate leading-tight tracking-tight mb-4">
+        Everything you need to<br/>go from zero to hired
+      </h2>
+      <p class="text-[16px] text-slate-400 max-w-xl mx-auto leading-relaxed">
+        We don't just teach theory. You build real things, get real feedback, and join a real community of developers.
+      </p>
+    </div>
+
+    <!-- Feature cards grid -->
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Card 1: Coding Sandboxes -->
+      <div class="feature-card reveal reveal-delay-1 rounded-2xl p-7 border border-blue-100 cursor-default"
+           style="background: linear-gradient(145deg, #EFF6FF 0%, #F8FAFF 100%);">
+        <div class="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-brand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+          </svg>
+        </div>
+        <h3 class="font-rig font-bold text-[18px] text-slate tracking-wide mb-2.5">Interactive Coding Sandboxes</h3>
+        <p class="text-[14px] text-slate-400 leading-relaxed mb-5">
+          Write, run, and debug real code directly in your browser. Hands-on lab environments for every lesson — no setup required.
+        </p>
+      </div>
+
+      <!-- Card 2: Academy Tracks -->
+      <div class="feature-card reveal reveal-delay-2 rounded-2xl p-7 border border-violet-100 cursor-default"
+           style="background: linear-gradient(145deg, #F5F3FF 0%, #FAF8FF 100%);">
+        <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-200 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-violet-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/>
+          </svg>
+        </div>
+        <h3 class="font-rig font-bold text-[18px] text-slate tracking-wide mb-2.5">Structured Academy Tracks</h3>
+        <p class="text-[14px] text-slate-400 leading-relaxed mb-5">
+          Deep-dive columns into Web Dev, UI/UX Design, and Cybersecurity. Structured curricula built around real job requirements.
+        </p>
+      </div>
+
+      <!-- Card 3: Mentor Reviews -->
+      <div class="feature-card reveal reveal-delay-3 rounded-2xl p-7 border border-teal-100 cursor-default"
+           style="background: linear-gradient(145deg, #F0FDFA 0%, #F8FFFE 100%);">
+        <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-200 flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-teal-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
+          </svg>
+        </div>
+        <h3 class="font-rig font-bold text-[18px] text-slate tracking-wide mb-2.5">1-on-1 Mentor Reviews</h3>
+        <p class="text-[14px] text-slate-400 leading-relaxed mb-5">
+          Submit your projects and receive asynchronous code reviews from senior engineers. Targeted, actionable feedback every time.
+        </p>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-12 reveal">
+      <div class="text-center py-6 px-4 rounded-2xl border border-slate-100 bg-canvas hover:border-brand/30 hover:bg-blue-50/50 transition-all duration-200">
+        <div class="font-rig font-bold text-[32px] text-brand tracking-wide">4,800+</div>
+        <div class="text-[13px] text-slate-400 mt-1">Students enrolled</div>
+      </div>
+      <div class="text-center py-6 px-4 rounded-2xl border border-slate-100 bg-canvas hover:border-brand/30 hover:bg-blue-50/50 transition-all duration-200">
+        <div class="font-rig font-bold text-[32px] text-brand tracking-wide">63</div>
+        <div class="text-[13px] text-slate-400 mt-1">Course modules</div>
+      </div>
+      <div class="text-center py-6 px-4 rounded-2xl border border-slate-100 bg-canvas hover:border-brand/30 hover:bg-blue-50/50 transition-all duration-200">
+        <div class="font-rig font-bold text-[32px] text-brand tracking-wide">97%</div>
+        <div class="text-[13px] text-slate-400 mt-1">Completion rate</div>
+      </div>
+      <div class="text-center py-6 px-4 rounded-2xl border border-slate-100 bg-canvas hover:border-brand/30 hover:bg-blue-50/50 transition-all duration-200">
+        <div class="font-rig font-bold text-[32px] text-brand tracking-wide">3</div>
+        <div class="text-[13px] text-slate-400 mt-1">Expert tracks</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- #endregion -->
+
+<!-- #region ABOUT / CTA -->
+<section id="about" class="py-20 lg:py-28 relative overflow-hidden"
+         style="background: linear-gradient(135deg, #071B2F 0%, #082B43 55%, #0B3C5D 100%);">
+  <div class="orb" style="width:400px;height:400px;background:radial-gradient(circle,rgba(0,163,255,0.3) 0%,transparent 70%);top:-100px;right:-80px;"></div>
+
+  <div class="max-w-4xl mx-auto px-6 lg:px-10 text-center relative reveal">
+    <span class="inline-block text-[12px] font-bold tracking-widest text-blue-300 uppercase mb-6 px-4 py-1.5 rounded-full border border-blue-500/30 bg-blue-500/10">
+      Start today
+    </span>
+    <h2 class="font-rig font-bold text-4xl lg:text-[52px] text-white leading-tight tracking-tight mb-5">
+      Your first lesson is<br/>completely free.
+    </h2>
+    <p class="text-[16px] text-white/55 leading-relaxed mb-10 max-w-xl mx-auto">
+      Join thousands of students already building their tech careers. Pick a track, start coding, and see results in days — not months.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="login.html"
+         class="inline-flex items-center justify-center gap-2 bg-brand hover:bg-royal text-white font-semibold text-[14px] px-8 py-3.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5"
+         style="box-shadow:0 4px 20px rgba(0,163,255,0.5);">
+        Go to Dashboard
+        <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a href="#features"
+         class="inline-flex items-center justify-center gap-2 text-white/70 hover:text-white border border-white/20 hover:border-white/40 font-medium text-[14px] px-8 py-3.5 rounded-xl transition-all duration-200">
+        Explore Tracks
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- #endregion -->
+
+<!-- #region FOOTER -->
+<footer class="bg-slate py-10">
+  <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <div class="flex flex-col md:flex-row items-center justify-center">
+      <!-- Brand -->
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="StackLab" class="w-7 h-7 object-contain opacity-70" />
+        <span class="font-nasa text-[11.5px] tracking-widest text-white/40">STACKLAB ACADEMY™</span>
+      </div>
+    </div>
+    <div class="mt-6 pt-6 border-t border-white/8 text-center">
+      <p class="text-[11.5px] text-white/25">© <span id="footerYear"></span> StackLab Academy. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- #endregion -->
+
+<!-- #region SCRIPTS -->
+<script src="script.js"></script>
+<!-- #endregion -->
+</body>
+</html>

@@ -4,15 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>StackLab Academy — Master Tech Skills Layer by Layer</title>
-  
+
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
-  <!-- Shared stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 
   <script>
@@ -20,12 +18,12 @@
       theme: {
         extend: {
           colors: {
-            brand:  '#00A3FF',   /* palette accent blue */
-            royal:  '#082B43',   /* palette deep navy (hover / footer) */
-            teal:   '#0B3C5D',   /* palette teal-navy */
-            canvas: '#F5F7FA',   /* palette near-white */
-            dark:   '#071B2F',   /* hero bg */
-            slate:  '#082B43',   /* footer */
+            brand:  '#00A3FF',
+            royal:  '#082B43',
+            teal:   '#0B3C5D',
+            canvas: '#F5F7FA',
+            dark:   '#071B2F',
+            slate:  '#082B43',
           },
           fontFamily: {
             sans: ["'Space Grotesk'", 'sans-serif'],
@@ -43,7 +41,6 @@
 <header id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-transparent">
   <div class="max-w-7xl mx-auto px-6 lg:px-10 h-[68px] flex items-center justify-between gap-6">
 
-    <!-- Brand -->
     <a href="index.html" class="flex items-center gap-3 brand-hover flex-shrink-0">
       <img src="logo.png" alt="StackLab Academy" class="w-9 h-9 object-contain" />
       <div class="flex flex-col leading-none">
@@ -52,12 +49,10 @@
       </div>
     </a>
 
-    <!-- Right CTAs -->
     <div class="flex items-center gap-3">
       <a href="login.html" class="hidden sm:inline-block text-[13.5px] text-white/75 hover:text-white transition-colors duration-200 font-medium px-3 py-2">
         Sign In
       </a>
-      <!-- nav-cta-btn class tells script.js to keep this text WHITE even when navbar scrolls -->
       <a href="login.html"
          class="nav-cta-btn inline-flex items-center gap-2 bg-brand hover:bg-royal text-white text-[13.5px] font-semibold px-5 py-2.5 rounded-xl transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg whitespace-nowrap"
          style="box-shadow: 0 4px 14px rgba(0,163,255,0.4);">
@@ -76,14 +71,12 @@
 <!-- #region HERO -->
 <section class="hero-bg grid-texture relative min-h-screen flex items-center overflow-hidden pt-[68px]">
 
-  <!-- Orbs -->
   <div class="orb orb-1"></div>
   <div class="orb orb-2"></div>
 
   <div class="max-w-7xl mx-auto px-6 lg:px-10 w-full py-20 lg:py-28">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-      <!-- Left: Text -->
       <div class="flex flex-col gap-6">
         <div class="flex items-center gap-2">
           <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
@@ -101,13 +94,8 @@
           Choose a customized academic path in Web Development, UI/UX Design, or Cybersecurity. Build real projects, get mentor feedback, and graduate job-ready.
         </p>
 
-        <!-- Enroll form card -->
         <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-5 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 max-w-md">
           <div class="flex items-center gap-3 flex-1 bg-white/10 rounded-xl px-4 py-3 border border-white/10">
-            <svg class="w-4 h-4 text-white/50 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
             <input type="email" placeholder="Enter your email address"
                    class="enroll-input bg-transparent text-white placeholder-white/40 text-[13.5px] flex-1 border-none outline-none" />
           </div>
@@ -120,19 +108,15 @@
         <p class="text-[12px] text-white/35">No credit card required · Cancel anytime</p>
       </div>
 
-      <!-- Right: App window placeholder -->
       <div class="flex justify-center lg:justify-end">
         <div class="relative w-full max-w-[560px]">
 
-          <!-- Subtle glow behind window -->
           <div class="absolute inset-0 rounded-2xl blur-2xl opacity-30"
                style="background: linear-gradient(135deg, #1A56DB, #7C3AED); transform: scale(0.95) translateY(10px);"></div>
 
-          <!-- Window chrome -->
           <div class="relative rounded-2xl overflow-hidden border border-white/15"
                style="background: rgba(15,23,42,0.75); backdrop-filter: blur(20px);">
 
-            <!-- Title bar -->
             <div class="flex items-center gap-2 px-4 py-3 border-b border-white/10"
                  style="background: rgba(255,255,255,0.04);">
               <div class="chrome-dot bg-red-400/80"></div>
@@ -144,14 +128,12 @@
               </div>
             </div>
 
-            <!-- Video placeholder -->
             <div class="relative aspect-video overflow-hidden"
                  style="background: linear-gradient(135deg, #0B1120 0%, #111827 100%);">
               <div class="absolute inset-0 flex items-center justify-center" id="videoSlot">
                 <video autoplay muted loop playsinline src="logos\loop video stacklab.webm" class="w-full h-full object-cover"></video>
               </div>
 
-              <!-- Bottom status bar -->
               <div class="absolute bottom-0 left-0 right-0 h-10 flex items-center px-4 gap-3"
                    style="background: rgba(0, 0, 0, 0.616); backdrop-filter: blur(8px);">
                 <div class="flex gap-1.5 items-center">
@@ -169,7 +151,6 @@
     </div>
   </div>
 
-  <!-- Bottom wave -->
   <div class="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
        style="background: linear-gradient(to bottom, transparent 0%, #F8FAFC 100%);"></div>
 </section>
@@ -200,7 +181,6 @@
 <section id="features" class="py-24 lg:py-32" style="background:#ffffff;">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
 
-    <!-- Section header -->
     <div class="text-center mb-16 reveal">
       <span class="inline-block text-[12px] font-bold tracking-widest text-brand uppercase mb-4 px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100">
         Why StackLab
@@ -213,10 +193,8 @@
       </p>
     </div>
 
-    <!-- Feature cards grid -->
     <div class="grid md:grid-cols-3 gap-6">
 
-      <!-- Card 1: Coding Sandboxes -->
       <div class="feature-card reveal reveal-delay-1 rounded-2xl p-7 border border-blue-100 cursor-default"
            style="background: linear-gradient(145deg, #EFF6FF 0%, #F8FAFF 100%);">
         <div class="w-12 h-12 rounded-xl bg-brand/10 border border-brand/20 flex items-center justify-center mb-5">
@@ -230,7 +208,6 @@
         </p>
       </div>
 
-      <!-- Card 2: Academy Tracks -->
       <div class="feature-card reveal reveal-delay-2 rounded-2xl p-7 border border-violet-100 cursor-default"
            style="background: linear-gradient(145deg, #F5F3FF 0%, #FAF8FF 100%);">
         <div class="w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-200 flex items-center justify-center mb-5">
@@ -244,7 +221,6 @@
         </p>
       </div>
 
-      <!-- Card 3: Mentor Reviews -->
       <div class="feature-card reveal reveal-delay-3 rounded-2xl p-7 border border-teal-100 cursor-default"
            style="background: linear-gradient(145deg, #F0FDFA 0%, #F8FFFE 100%);">
         <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-200 flex items-center justify-center mb-5">
@@ -259,7 +235,6 @@
       </div>
     </div>
 
-    <!-- Stats row -->
     <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mt-12 reveal">
       <div class="text-center py-6 px-4 rounded-2xl border border-slate-100 bg-canvas hover:border-brand/30 hover:bg-blue-50/50 transition-all duration-200">
         <div class="font-rig font-bold text-[32px] text-brand tracking-wide">4,800+</div>
@@ -322,7 +297,6 @@
 <footer class="bg-slate py-10">
   <div class="max-w-7xl mx-auto px-6 lg:px-10">
     <div class="flex flex-col md:flex-row items-center justify-center">
-      <!-- Brand -->
       <div class="flex items-center gap-3">
         <img src="logo.png" alt="StackLab" class="w-7 h-7 object-contain opacity-70" />
         <span class="font-nasa text-[11.5px] tracking-widest text-white/40">STACKLAB ACADEMY™</span>

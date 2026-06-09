@@ -1,21 +1,17 @@
-// ─────────────────────────────────────────────────────────
-//  STACKLAB ACADEMY — script.js
-//  Shared by: index.html (landing page) + dashboard.php
-// ─────────────────────────────────────────────────────────
+//─────────────────────────────────────────────────────────
+//STACKLAB ACADEMY — script.js
+//─────────────────────────────────────────────────────────
 
-// #region LANDING PAGE (index.html only)
+//#region LANDING PAGE (index.html only)
 
-// Makes the top navbar get a frosted-glass background after scrolling 50px
 function initNavbar() {
     var navbar = document.getElementById("navbar");
-    if (!navbar) return; // not on the landing page, stop here
+    if (!navbar) return;
 
     function updateNavTheme() {
         var scrolled = window.scrollY > 50;
         navbar.classList.toggle("scrolled", scrolled);
 
-        // Darken plain nav links when scrolled (they start white on the dark hero).
-        // nav-cta-btn has a blue background so its text stays white always.
         navbar.querySelectorAll("a:not(.nav-cta-btn)").forEach(function(a) {
             a.style.color = scrolled ? "#475569" : "";
         });
@@ -28,18 +24,15 @@ function initNavbar() {
     }
 
     window.addEventListener("scroll", updateNavTheme);
-    updateNavTheme(); // run once on load so it's correct from the start
+    updateNavTheme();
 }
 
-// Reveals elements with class .reveal when they scroll into view
 function initScrollReveal() {
     var reveals = document.querySelectorAll(".reveal");
     if (!reveals.length) return;
 
     function checkReveal() {
         reveals.forEach(function(el) {
-            // getBoundingClientRect().top = distance from element to top of screen
-            // If it's within 90% of the screen height, show it
             if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
                 el.classList.add("in-view");
             }
@@ -47,31 +40,27 @@ function initScrollReveal() {
     }
 
     window.addEventListener("scroll", checkReveal);
-    checkReveal(); // also check on page load
+    checkReveal();
 }
 
-// Puts the current year in the footer element with id="footerYear"
 function initFooterYear() {
     var el = document.getElementById("footerYear");
     if (el) el.textContent = new Date().getFullYear();
 }
 
-// #endregion
+//#endregion
 
-// #region DASHBOARD
+//#region DASHBOARD
 
-// Handles tab switching in the sidebar nav
 function initDashboardNav() {
     var navItems = document.querySelectorAll(".nav-item");
-    if (!navItems.length) return; // not on dashboard, stop here
+    if (!navItems.length) return;
 
     function activateTab(tab) {
-        // Toggle the "active" highlight on nav items
         navItems.forEach(function(n) {
             n.classList.toggle("active", n.dataset.tab === tab);
         });
 
-        // Hide all panels, then show the one matching the clicked tab
         document.querySelectorAll(".workspace-panel").forEach(function(p) {
             p.style.display = "none";
         });
@@ -79,29 +68,23 @@ function initDashboardNav() {
         if (target) target.style.display = "";
     }
 
-    // Attach click listener to every nav item
     navItems.forEach(function(item) {
         item.addEventListener("click", function() {
             activateTab(item.dataset.tab);
         });
     });
 
-    // If the URL has ?tab=students (etc.), open that tab automatically
-    // This happens after a form submit that redirects back here
     var urlParams = new URLSearchParams(window.location.search);
     var urlTab    = urlParams.get("tab");
     if (urlTab) activateTab(urlTab);
 }
 
-// Shows a success or error message on the Profile page
-// Messages come from the URL: ?success=1 or ?error=wrongpass etc.
 function initProfileFlash() {
     var msg = document.getElementById("profileMessage");
     if (!msg) return;
 
     var urlParams = new URLSearchParams(window.location.search);
 
-    // Map of error codes → readable messages
     var errorMessages = {
         empty:       "Please fill in all fields.",
         mismatch:    "New passwords don't match.",
@@ -113,7 +96,6 @@ function initProfileFlash() {
         upload:      "Upload failed. Please try again.",
     };
 
-    // Map of success codes → readable messages
     var successMessages = {
         "1":      "Password updated successfully!",
         "avatar": "Profile picture updated!",
@@ -131,7 +113,6 @@ function initProfileFlash() {
     }
 }
 
-// Wires up the "Delete Account" button to open its confirmation modal
 function initDeleteModal() {
     var openBtn   = document.getElementById("deleteAccountBtn");
     var modal     = document.getElementById("deleteModal");
@@ -144,7 +125,6 @@ function initDeleteModal() {
     backdrop.addEventListener("click",  function() { modal.classList.remove("open"); });
 }
 
-// Shows today's date in the dashboard header
 function initCurrentDate() {
     var el = document.getElementById("currentDate");
     if (!el) return;
@@ -153,7 +133,6 @@ function initCurrentDate() {
     el.textContent = "Today is " + now.toLocaleDateString("en-US", opts);
 }
 
-// Opens/closes the sidebar on mobile using the hamburger button
 function initHamburger() {
     var btn     = document.getElementById("hamburgerBtn");
     var sidebar = document.getElementById("sidebar");
@@ -181,7 +160,6 @@ function initHamburger() {
 
     if (overlay) overlay.addEventListener("click", closeSidebar);
 
-    // Auto-close sidebar after tapping a nav item on mobile
     document.querySelectorAll(".nav-item").forEach(function(item) {
         item.addEventListener("click", function() {
             if (window.innerWidth <= 768) closeSidebar();
@@ -189,9 +167,9 @@ function initHamburger() {
     });
 }
 
-// #endregion
+//#endregion
 
-// #region INIT — run everything once the page is fully loaded
+//#region INIT — run everything once the page is fully loaded
 
 document.addEventListener("DOMContentLoaded", function() {
     initNavbar();
@@ -204,4 +182,4 @@ document.addEventListener("DOMContentLoaded", function() {
     initHamburger();
 });
 
-// #endregion
+//#endregion

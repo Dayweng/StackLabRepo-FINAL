@@ -82,10 +82,10 @@ $recent = $pdo->query('
 //#endregion
 ?>
 
-<!-- #region HTML Start -->
+<!--#region HTML Start-->
 <!DOCTYPE html>
 <html lang="en">
-<!-- #region HEAD -->
+<!--#region HEAD-->
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -99,12 +99,12 @@ $recent = $pdo->query('
 
   <link rel="stylesheet" href="styles.css" />
 </head>
-<!-- #endregion -->
+<!--#endregion-->
 <body>
 
 <div class="app-shell">
 
-  <!-- #region SIDEBAR -->
+  <!--#region SIDEBAR-->
   <aside class="sidebar" id="sidebar">
 
     <div class="brand animate-item">
@@ -186,9 +186,9 @@ $recent = $pdo->query('
     </div>
     <div class="sidebar-deco"></div>
   </aside>
-  <!-- #endregion -->
+  <!--#endregion-->
 
-  <!-- #region WORKSPACE -->
+  <!--#region WORKSPACE-->
   <main class="workspace" id="workspace">
 
     <button id="hamburgerBtn" class="hamburger-btn" aria-label="Toggle menu">
@@ -202,7 +202,7 @@ $recent = $pdo->query('
       </div>
     </header>
 
-    <!-- #region PANEL: Dashboard -->
+    <!--#region PANEL: Dashboard-->
     <div id="panel-dashboard" class="workspace-panel">
       <div class="animate-item dash-overview">
 
@@ -255,9 +255,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Students -->
+    <!--#region PANEL: Students-->
     <div id="panel-students" class="workspace-panel" style="display:none;">
       <div class="animate-item">
 
@@ -317,9 +317,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Courses -->
+    <!--#region PANEL: Courses-->
     <div id="panel-courses" class="workspace-panel" style="display:none;">
       <div class="animate-item">
 
@@ -375,9 +375,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Enrollments -->
+    <!--#region PANEL: Enrollments-->
     <div id="panel-enrollments" class="workspace-panel" style="display:none;">
       <div class="animate-item">
 
@@ -435,9 +435,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Schedule -->
+    <!--#region PANEL: Schedule-->
     <div id="panel-schedule" class="workspace-panel" style="display:none;">
       <div class="animate-item">
 
@@ -474,9 +474,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Payments -->
+    <!--#region PANEL: Payments-->
     <div id="panel-payments" class="workspace-panel" style="display:none;">
       <div class="animate-item">
 
@@ -516,9 +516,9 @@ $recent = $pdo->query('
 
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
-    <!-- #region PANEL: Edit Profile -->
+    <!--#region PANEL: Edit Profile-->
     <div id="panel-profile" class="workspace-panel" style="display:none;">
       <div class="profile-panel animate-item">
         <div id="profileMessage" class="flash-msg"></div>
@@ -580,17 +580,17 @@ $recent = $pdo->query('
         </div>
       </div>
     </div>
-    <!-- #endregion -->
+    <!--#endregion-->
 
   </main>
-  <!-- #endregion -->
+  <!--#endregion-->
 
 </div>
 <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-<!-- #region MODALS -->
+<!--#region MODALS-->
 
-<!-- #region MODAL: Student -->
+<!--#region MODAL: Student-->
 <div id="modalStudent" class="modal-overlay">
   <div class="modal-backdrop modal-cancel-target"></div>
   <div class="modal-card" style="max-width:460px;">
@@ -608,9 +608,9 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
+<!--#endregion-->
 
-<!-- #region MODAL: Course -->
+<!--#region MODAL: Course-->
 <div id="modalCourse" class="modal-overlay">
   <div class="modal-backdrop modal-cancel-target"></div>
   <div class="modal-card" style="max-width:460px;">
@@ -628,9 +628,9 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
+<!--#endregion-->
 
-<!-- #region MODAL: Enrollment -->
+<!--#region MODAL: Enrollment-->
 <div id="modalEnrollment" class="modal-overlay">
   <div class="modal-backdrop modal-cancel-target"></div>
   <div class="modal-card" style="max-width:460px;">
@@ -671,9 +671,9 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
+<!--#endregion-->
 
-<!-- #region MODAL: Payment -->
+<!--#region MODAL: Payment-->
 <div id="modalPayment" class="modal-overlay">
   <div class="modal-backdrop modal-cancel-target"></div>
   <div class="modal-card" style="max-width:460px;">
@@ -700,9 +700,9 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
+<!--#endregion-->
 
-<!-- #region MODAL: Delete -->
+<!--#region MODAL: Delete-->
 <div id="modalDelete" class="modal-overlay">
   <div class="modal-backdrop modal-cancel-target"></div>
   <div class="modal-card" style="max-width:420px;">
@@ -719,9 +719,9 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
+<!--#endregion-->
 
-<!-- #region MODAL: Delete Account -->
+<!--#region MODAL: Delete Account-->
 <div id="deleteModal" class="modal-overlay">
   <div id="deleteModalBackdrop" class="modal-backdrop"></div>
   <div class="modal-card">
@@ -739,10 +739,10 @@ $recent = $pdo->query('
     </form>
   </div>
 </div>
-<!-- #endregion -->
-<!-- #endregion -->
+<!--#endregion-->
+<!--#endregion-->
 
-<!-- #region SCRIPTS -->
+<!--#region SCRIPTS-->
 <script src="script.js"></script>
 <script>
 //#region MODAL HELPERS
@@ -848,7 +848,7 @@ document.getElementById('headerAddBtn')?.addEventListener('click', function() {
 });
 //#endregion
 </script>
-<!-- #endregion -->
-<!-- #endregion -->
+<!--#endregion-->
+<!--#endregion-->
 </body>
 </html>
